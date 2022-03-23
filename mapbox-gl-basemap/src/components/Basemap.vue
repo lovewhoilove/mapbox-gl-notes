@@ -74,7 +74,7 @@ export default {
                     source: 'bg',
                     type: 'fill',
                     paint: {
-                        'fill-color': '#efe9e1',
+                        'fill-color': '#f8f4f0',
                     },
                 });
 
@@ -117,6 +117,80 @@ export default {
                         'fill-opacity': 1,
                     },
                 });
+
+                // map.addLayer({
+                //     id: 'landuse-residential',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['all', ['in', 'fclass', 'residential', 'suburb', 'neighbourhood']],
+                //     // minzoom: 12,
+                //     paint: {
+                //         'fill-color': {
+                //             base: 1,
+                //             stops: [
+                //                 [12, 'hsla(30, 19%, 90%, 0.4)'],
+                //                 [16, 'hsla(30, 19%, 90%, 0.2)'],
+                //             ],
+                //         },
+                //     },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-industrial',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['all', ['==', '$type', 'Polygon'], ['in', 'fclass', 'industrial', 'garages', 'dam']],
+                //     // minzoom: 12,
+                //     paint: { 'fill-color': 'hsla(49, 100%, 88%, 0.34)' },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-commercial',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['all', ['==', '$type', 'Polygon'], ['==', 'fclass', 'commercial']],
+                //     // minzoom: 12,
+                //     paint: { 'fill-color': 'hsla(0, 60%, 87%, 0.23)' },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-cemetery',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['==', 'fclass', 'cemetery'],
+                //     paint: { 'fill-color': '#e0e4dd' },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-hospital',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['==', 'fclass', 'hospital'],
+                //     paint: { 'fill-color': '#fde' },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-school',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['==', 'fclass', 'school'],
+                //     paint: { 'fill-color': '#f0e8f8' },
+                // });
+
+                // map.addLayer({
+                //     id: 'landuse-railway',
+                //     source: 'twSource',
+                //     'source-layer': 'landuse',
+                //     type: 'fill',
+                //     filter: ['==', 'class', 'railway'],
+                //     paint: { 'fill-color': 'hsla(30, 19%, 90%, 0.4)' },
+                // });
 
                 //  --------------- roads
                 map.addLayer({
@@ -161,7 +235,7 @@ export default {
                     },
                 });
 
-                // ------------------ building
+                //------------------ building
                 map.addLayer({
                     id: 'buildings',
                     source: 'twSource',
@@ -186,28 +260,29 @@ export default {
                     },
                 });
 
-                map.addLayer({
-                    id: '3d-buildings',
-                    source: 'twSource',
-                    'source-layer': 'buildings',
-                    type: 'fill-extrusion',
-                    minzoom: 12,
-                    paint: {
-                        'fill-extrusion-color': '#dfdcd7',
-                        'fill-extrusion-opacity': 1,
-                        'fill-extrusion-height': 50,
-                    },
-                });
+                // map.addLayer({
+                //     id: '3d-buildings',
+                //     source: 'twSource',
+                //     'source-layer': 'buildings',
+                //     type: 'fill-extrusion',
+                //     minzoom: 12,
+                //     paint: {
+                //         'fill-extrusion-color': '#dfdcd7',
+                //         'fill-extrusion-opacity': 1,
+                //         'fill-extrusion-height': 50,
+                //     },
+                // });
 
-                // ------------------ waterways
+                //------------------ waterways
                 map.addLayer({
                     id: 'waterways',
                     source: 'twSource',
                     'source-layer': 'waterways',
                     type: 'line',
+                    layout: { 'line-cap': 'round' },
                     paint: {
                         'line-color': '#75CFEF',
-                        'line-opacity': 0.8,
+                        'line-dasharray': [2, 4],
                         'line-width': 3,
                     },
                 });
