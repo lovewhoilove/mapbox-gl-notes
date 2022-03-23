@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# 参考资料
+
+1. https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#layers
+2. https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#layout-property
+3. https://zhuanlan.zhihu.com/p/203756597
